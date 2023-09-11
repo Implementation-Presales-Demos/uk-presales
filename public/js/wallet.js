@@ -28,7 +28,7 @@ let paymentDataObj = {
         "currency": "GBP"
     },
     "allowedPaymentMethods":["scheme"],
-    "blockedPaymentMethods":["amazonpay","googlepay"]
+    "blockedPaymentMethods":["amazonpay","googlepay","paywithgoogle"]
     
 };
 
