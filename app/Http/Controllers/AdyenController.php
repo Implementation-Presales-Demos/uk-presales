@@ -72,35 +72,6 @@ class AdyenController extends Controller
 
         return response()->json($result);
     }
-    
-    public function makeStoreCardPayment(Request $request)
-    {
-        $checkoutService = new \Adyen\Service\Checkout($this->adyenClient);
-        $params = $request->all();
-
-        $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === 0 ? 'https://' : 'http://';
-
-        $cacheKeyRedirect = $protocol . $_SERVER['HTTP_HOST'] . "/return-url/" . $request->reference;
-
-        $params["returnUrl"] = $cacheKeyRedirect;
-
-        // For Klarna, add some extra placeholder data to the API call
-        if (isset($params['paymentMethod']['type']) &&
-            (strpos($params['paymentMethod']['type'], 'klarna') !== false)) {
-            $this->addKlarnaData($params);
-        }
-
-        $this->addLoggedInDetails($params);
-
-        $result = $this->makeAdyenRequest("payments", $params, false, $checkoutService);
-
-        if ($result["response"]['resultCode'] == 'RedirectShopper' && isset($result["response"]['paymentData'])) {
-            // Store the payment data for 15 minutes
-            $cache = Cache::put($request->reference, $result['paymentData'], now()->addMinutes(15));
-        }
-
-        return response()->json($result);
-    }
 
     public function makeCashPayment(Request $request, $isInternal = false)
     {
