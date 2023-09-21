@@ -1,3 +1,5 @@
+## Use Case
+
 ## Setup
 
 - [Download composer installer](http://getcomposer.org/installer)
@@ -16,7 +18,8 @@
 ## Contributing
 
 - Do not contribute directly to the `main` or `master` branch
-- Create a new branch (see naming convention below) and create a `pull request` to the `master` branch
+- Contribute instead to the `develop` branch
+- When working on a new feature, create a new branch from the develop branch (see naming convention below) and create a `pull request` to the `develop` branch
 
 ### Branch Naming Convention
 
