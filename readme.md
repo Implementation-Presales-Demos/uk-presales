@@ -1,3 +1,5 @@
+## Use Case
+
 ## Setup
 
 - [Download composer installer](http://getcomposer.org/installer)
