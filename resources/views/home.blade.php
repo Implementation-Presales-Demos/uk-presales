@@ -16,6 +16,7 @@
             <button id="hotelCheckin" type="button" class="btn btn-primary bkg-brand-color-one bdr-brand-color-two mt-2"><a class="txt-brand-color-two" href="/hotel-checkin">Hotel Check-in / Check-out</a></button>
             <button id="payAsYouGo-register" type="button" class="w-100 btn btn-primary bkg-brand-color-one bdr-brand-color-two mt-2"><a class="txt-brand-color-two" href="/payg-registration">PAYG - Registration</a></button>
             <button id="payAsYouGo-interface" type="button" class="w-100 btn btn-primary bkg-brand-color-one bdr-brand-color-two mt-2"><a class="txt-brand-color-two" href="/payg-interface">PAYG - Interface</a></button>
+            <button id="wallet" type="button" class="w-100 btn btn-primary bkg-brand-color-one bdr-brand-color-two mt-2"><a class="txt-brand-color-two" href="/wallet">Wallet</a></button>
           </div>
         </div>
       </div>

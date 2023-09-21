@@ -54,6 +54,33 @@ export class CheckoutApi {
         });
     }
 
+    
+    makeStoreCardPayment(state, component) {
+        let combinedData = Object.assign(state.data, this.data);
+
+        // Allow 3DS2
+        if (!combinedData.additionalData) {
+            combinedData.additionalData = {};
+        }
+        combinedData.additionalData.allow3DS2 = true;
+        combinedData.channel = "web";
+        combinedData.origin = window.location.origin;
+        combinedData.storePaymentMethod = true;
+
+        if (this.data.giftAmount && this.data.giftAmount.value < this.data.amount.value) {
+            combinedData.amount = this.data.giftAmount;
+        }
+
+        delete combinedData.giftAmount;
+
+        return $.ajax({
+            url: '/api/adyen/makeStoreCardPayment',
+            dataType: 'json',
+            type: 'post',
+            data: combinedData
+        });
+    }
+
     makeCashPayment(submitData) {
         let merchantAccount = submitData.merchantAccount;
         let combinedData = Object.assign(submitData, this.data);

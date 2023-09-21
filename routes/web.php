@@ -31,6 +31,7 @@ Route::group(['middleware' => 'demosession'], function () {
   Route::get('/payg-registration', 'ShowController@paygRegistration');
   Route::get('/payg-interface', 'ShowController@paygInterface');
   Route::get('/payment-links', 'ShowController@paymentLinks');
+  Route::get('/wallet', 'ShowController@wallet');
 
   // Authenticated Routes
   Route::group(['middleware' => 'auth'], function () {

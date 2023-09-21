@@ -45,6 +45,17 @@ class ShowController extends Controller
     ]);
   }
 
+  public function wallet(Request $request) {
+    return view('wallet', [
+      'merchantAccount' => \Config::get('adyen.ecomMerchantAccount'),
+      'merchantAccountPos' => \Config::get('adyen.posMerchantAccount'),
+      'clientKey' => \Config::get('adyen.clientKey'),
+      'terminalPooid' => \Config::get('adyen.terminalPooid'),
+      'terminalPooidTwo' => \Config::get('adyen.terminalPooidTwo'),
+      'paypalID' => \Config::get('adyen.paypalID')
+    ]);
+  }
+  
   public function paygRegistration(Request $request) {
     return view('payg-registration', [
       'merchantAccount' => \Config::get('adyen.posMerchantAccount'),
