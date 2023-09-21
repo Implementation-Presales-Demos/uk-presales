@@ -54,6 +54,7 @@ export class CheckoutApi {
         });
     }
 
+    
     makeStoreCardPayment(state, component) {
         let combinedData = Object.assign(state.data, this.data);
 

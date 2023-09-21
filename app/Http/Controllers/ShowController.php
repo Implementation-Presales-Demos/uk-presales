@@ -34,6 +34,7 @@ class ShowController extends Controller
     ]);
   }
 
+  
   public function unifiedCommerce(Request $request) {
     return view('unified-commerce', [
       'merchantAccount' => \Config::get('adyen.ecomMerchantAccount'),

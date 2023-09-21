@@ -33,6 +33,7 @@ Route::group(['middleware' => 'demosession'], function () {
   Route::get('/payment-links', 'ShowController@paymentLinks');
   Route::get('/wallet', 'ShowController@wallet');
 
+  
   // Authenticated Routes
   Route::group(['middleware' => 'auth'], function () {
     Route::get('/payment-methods', 'ShowController@managePaymentMethods');

@@ -63,6 +63,7 @@ class AdyenController extends Controller
 
         $this->addLoggedInDetails($params);
 
+        
         $result = $this->makeAdyenRequest("payments", $params, false, $checkoutService);
 
         if ($result["response"]['resultCode'] == 'RedirectShopper' && isset($result["response"]['paymentData'])) {
